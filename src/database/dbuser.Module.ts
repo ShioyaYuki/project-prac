@@ -9,6 +9,6 @@ import { dbUserService } from "./dbuser.Service";
         ...userProviders,
         dbUserService,
     ],
-    exports: [dbuserModule,dbUserService]
+    exports: [dbuserModule, dbUserService]
 })
-export class dbuserModule{}
+export class dbuserModule { }

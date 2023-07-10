@@ -7,6 +7,6 @@ import { dbuserModule } from 'src/database/dbuser.Module';
   imports: [dbuserModule],
   controllers: [UserController],
   providers: [UserService],
-  exports: [UserModule,UserService]
+  exports: [UserModule, UserService]
 })
-export class UserModule {}
+export class UserModule { }

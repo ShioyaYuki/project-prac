@@ -10,20 +10,24 @@ export class dbUserService {
     constructor(
         @Inject('USER_REPOSITORY')
         private userRepository: Repository<User>,
-    ){}
+    ) { }
     async findAll(): Promise<User[]> {
         return this.userRepository.find();
     }
- 
-    async findAllID(){
+
+    async showID() {
         const user = this.findAll();
-        const id =[];
+        const id = [];
         (await user).forEach(element => {
             id.push(element.id);
         })
-        return id;
+        //return id;
+        const newUserArray = (await user).map((currentvalue) => {
+            return currentvalue.id;
+        })
+        return newUserArray;
     }
-    async Create(createuserdto: CreateUserDto){
+    async Create(createuserdto: CreateUserDto) {
         const user = new User();
         user.firstname = createuserdto.firstname;
         user.lastname = createuserdto.lastname;
@@ -31,28 +35,28 @@ export class dbUserService {
         user.updated = createuserdto.updated;
         await this.userRepository.insert(user);
         const repository = await this.findAll();
-        (await repository).forEach(element=>{
-           user.id= element.id;
+        (await repository).forEach(element => {
+            user.id = element.id;
         })
         return user;
     }
-    async Destory(num: number){
-     this.userRepository.createQueryBuilder('user').delete().where
-     ("id= :id",{id: num}).execute();
+    async destory(num: number) {
+        this.userRepository.createQueryBuilder('user').delete().where
+            ("id= :id", { id: num }).execute();
     }
-    async findOne(num: number){
-       return this.userRepository.createQueryBuilder('user').select().
-        where("id= :id",{id:num}).execute();
+    async findOne(num: number) {
+        return this.userRepository.createQueryBuilder('user').select().
+            where("id= :id", { id: num }).execute();
     }
-    async UpdateFromID(update: updateUserDto){
+    async UpdateFromID(update: updateUserDto) {
         return this.userRepository.createQueryBuilder('user').update().set(
-        {
-            id:update.id,
-            firstname:update.firstname,
-            lastname:update.lastname,
-            age:update.age,
-            updated:update.updated
-        }
-        ).where("id= :id",{id: update.id}).execute();
+            {
+                id: update.id,
+                firstname: update.firstname,
+                lastname: update.lastname,
+                age: update.age,
+                updated: update.updated
+            }
+        ).where("id= :id", { id: update.id }).execute();
     }
 }

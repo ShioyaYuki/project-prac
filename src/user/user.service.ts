@@ -5,26 +5,33 @@ import { dbUserService } from 'src/database/dbuser.Service';
 import { updateUserDto } from './dto/updateuser.Dto';
 @Injectable()
 export class UserService {
+
     constructor(
         private readonly dbuserservice: dbUserService,
-    ){}
+    ) { }
+
     users: CreateUserDto[] = []
     create(user: CreateUserDto) {
-       return this.dbuserservice.Create(user);
+        return this.dbuserservice.Create(user);
     }
-   async showDB(){
-     return this.dbuserservice.findAll(); 
+
+    async showDB() {
+        return this.dbuserservice.findAll();
     }
-    async showID(){
-        return this.dbuserservice.findAllID();
+
+    async showID() {
+        return this.dbuserservice.showID();
     }
-    async destory(id: number){
-        return this.dbuserservice.Destory(id);
+
+    async destory(id: number) {
+        return this.dbuserservice.destory(id);
     }
-    async findOne(id: number){
+
+    async findOne(id: number) {
         return this.dbuserservice.findOne(id);
     }
-    async updateFromID(update:updateUserDto){
+
+    async updateFromID(update: updateUserDto) {
         return this.dbuserservice.UpdateFromID(update);
     }
 }
