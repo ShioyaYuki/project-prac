@@ -3,6 +3,7 @@ import { UserController } from './user.controller';
 import { UserService } from './user.service';
 import { dbuserModule } from 'src/database/dbuser.Module';
 
+//ユーザーエンドポイント用モジュール
 @Module({
   imports: [dbuserModule],
   controllers: [UserController],

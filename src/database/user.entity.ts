@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+//使用するテーブルのカラム指定 今回はUser
 @Entity()
 export class User {
     @PrimaryGeneratedColumn()
@@ -15,5 +16,4 @@ export class User {
 
     @Column()
     updated: Date;
-
 }

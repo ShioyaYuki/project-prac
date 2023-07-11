@@ -3,13 +3,16 @@ import { UserService } from './user.service';
 import { CreateUserDto } from './dto/createUser.dto';
 import { destoryUserDto } from './dto/destoryUserDto';
 import { updateUserDto } from './dto/updateuser.Dto';
+
+//ユーザーエンドポイント用コントローラ　
+//エンドポイントごとにUserServiceに指示を出す
 @Controller('user')
 export class UserController {
     constructor(private readonly userService: UserService) { }
 
     @Post('create')
-    async create(@Body() userDto: CreateUserDto) {
-        return this.userService.create(userDto);
+    async create(@Body() user: CreateUserDto) {
+        return this.userService.create(user);
     }
 
     @Get('showDB')

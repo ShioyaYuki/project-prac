@@ -3,6 +3,9 @@ import { CreateUserDto } from './dto/createUser.dto';
 import { dbuserModule } from 'src/database/dbuser.Module';
 import { dbUserService } from 'src/database/dbuser.Service';
 import { updateUserDto } from './dto/updateuser.Dto';
+
+//ユーザーエンドポイント用サービスクラス
+//DB接続後はDB用serviceクラスへの中継が役割(消してもいいが使うかも)
 @Injectable()
 export class UserService {
 

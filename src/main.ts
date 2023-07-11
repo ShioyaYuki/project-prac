@@ -12,8 +12,9 @@ async function bootstrap() {
     .addTag('cats')
     .build();
   const document = SwaggerModule.createDocument(app, config);
+  //swagger用エンドポイント
   SwaggerModule.setup('api', app, document);
-
+  //ポート番号
   await app.listen(3000);
 }
 bootstrap();
