@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { dbUserService } from "src/database/dbuser.Service";
+import { dbUserService } from "src/database/dbuser.service";
 import { User } from "src/database/user.entity";
 import { users } from "./data";
 

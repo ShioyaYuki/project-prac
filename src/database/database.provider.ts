@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { AppDataSource } from './dataSource';
+import { AppDataSource } from './datasource';
 //データベース用プロバイダ(必要ないので消したい)
 export const databaseProviders = [
     {

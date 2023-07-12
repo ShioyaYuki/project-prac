@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
-import { DatabaseModule } from "./databaseModule";
+import { DatabaseModule } from "./database.module";
 import { dbuserProviders } from "./dbuser.provider";
-import { dbUserService } from "./dbuser.Service";
+import { dbUserService } from "./dbuser.service";
 //Userテーブル用モジュール 
 @Module({
     imports: [DatabaseModule],

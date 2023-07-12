@@ -2,8 +2,8 @@ import { Injectable, Inject, Body } from "@nestjs/common";
 import { Entity, Repository, } from "typeorm";
 import { User } from "./user.entity";
 import { elementAt } from "rxjs";
-import { CreateUserDto } from "src/user/dto/createUser.dto";
-import { updateUserDto } from "src/user/dto/updateuser.Dto";
+import { CreateUserDto } from "src/user/dto/create.user.dto";
+import { updateUserDto } from "src/user/dto/update.user.dto";
 //Userテーブル用サービスクラス Controllerで使用するフィールドやメソッドを書く場所？
 @Injectable()
 export class dbUserService {

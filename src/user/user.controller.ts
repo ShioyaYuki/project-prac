@@ -1,8 +1,8 @@
 import { Body, ConfigurableModuleBuilder, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { UserService } from './user.service';
-import { CreateUserDto } from './dto/createUser.dto';
-import { destoryUserDto } from './dto/destoryUserDto';
-import { updateUserDto } from './dto/updateuser.Dto';
+import { CreateUserDto } from './dto/create.user.dto';
+import { destoryUserDto } from './dto/destory.user.dto';
+import { updateUserDto } from './dto/update.user.dto';
 
 //ユーザーエンドポイント用コントローラ　
 //エンドポイントごとにUserServiceに指示を出す

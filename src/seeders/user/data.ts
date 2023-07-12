@@ -1,4 +1,4 @@
-import { updateUserDto } from "src/user/dto/updateuser.Dto";
+import { updateUserDto } from "src/user/dto/update.user.dto";
 //seeding時にテーブルに挿入される行をまとめて記入するファイル
 export const users:updateUserDto[]=[
     {

@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserDto } from './dto/createUser.dto';
-import { dbuserModule } from 'src/database/dbuser.Module';
-import { dbUserService } from 'src/database/dbuser.Service';
-import { updateUserDto } from './dto/updateuser.Dto';
+import { CreateUserDto } from './dto/create.user.dto';
+import { dbuserModule } from 'src/database/dbuser.module';
+import { dbUserService } from 'src/database/dbuser.service';
+import { updateUserDto } from './dto/update.user.dto';
 
 //ユーザーエンドポイント用サービスクラス
 //DB接続後はDB用serviceクラスへの中継が役割(消してもいいが使うかも)
