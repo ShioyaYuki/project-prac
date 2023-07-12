@@ -54,7 +54,9 @@ export class dbUserService {
         user.lastname = createuserdto.lastname;
         user.age = createuserdto.age;
         user.updated = createuserdto.updated;
+
         await this.userRepository.insert(user);
+
         const repository = await this.findAll();
         (await repository).forEach(element => {
             user.id = element.id;
@@ -79,9 +81,9 @@ export class dbUserService {
     }
 
 
- 
+
     //updateUserDto型(ユーザーテーブルが持つカラム全て)を引数とし、IDが一致する行の値に引数を代入
-        async UpdateFromID(update: updateUserDto) {
+    async UpdateFromID(update: updateUserDto) {
         return this.userRepository.createQueryBuilder('user').update().set(
             {
                 id: update.id,

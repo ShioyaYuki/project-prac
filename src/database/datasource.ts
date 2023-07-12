@@ -1,4 +1,4 @@
-import { DataSource }from "typeorm"
+import { DataSource } from "typeorm"
 //dataSourceの設定
 export const AppDataSource = new DataSource({
     type: 'mysql',
@@ -11,7 +11,7 @@ export const AppDataSource = new DataSource({
         __dirname + '/../**/*.entity{.ts,.js}',
     ],
     migrationsTableName: "migrations",
-    migrations:[ __dirname + '/../migrations/*.ts',
+    migrations: [__dirname + '/../migrations/*.ts',
     ],
     synchronize: false,
 });

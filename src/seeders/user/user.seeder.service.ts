@@ -10,12 +10,12 @@ export class UsersSeederService {
 
     //行を生成
     create(): Array<Promise<User>> {
-        
+
         return users.map(async (user) => {
             console.log(user);
 
             //idで検索し一致する値がなければresult=null
-            const result = await(await this.dbuserService.getRepository()).findOneBy({ id: user.id });
+            const result = await (await this.dbuserService.getRepository()).findOneBy({ id: user.id });
             console.log(result);
 
 

@@ -5,7 +5,7 @@ import { Seeder } from "./seeder";
 import { UsersSeederService } from "./user/user.seeder.service";
 //seeding用モジュール
 @Module({
-    imports:[dbuserModule, DatabaseModule],
-    providers:[Logger,Seeder,UsersSeederService],
+    imports: [dbuserModule, DatabaseModule],
+    providers: [Logger, Seeder, UsersSeederService],
 })
-export class SeederModule{}
+export class SeederModule { }

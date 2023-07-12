@@ -4,7 +4,7 @@ import { User } from './user.entity';
 export const dbuserProviders = [
     {
         provide: 'USER_REPOSITORY',
-        useFactory: (datasource: DataSource)=>datasource.getRepository(User),
+        useFactory: (datasource: DataSource) => datasource.getRepository(User),
         inject: ['DATA_SOURCE'],
     },
 ];
