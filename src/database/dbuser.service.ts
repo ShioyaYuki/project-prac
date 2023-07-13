@@ -4,6 +4,7 @@ import { User } from "./user.entity";
 import { elementAt } from "rxjs";
 import { CreateUserDto } from "src/user/dto/create.user.dto";
 import { updateUserDto } from "src/user/dto/update.user.dto";
+import { UserModel } from "./dbuser.models";
 //Userテーブル用サービスクラス Controllerで使用するフィールドやメソッドを書く場所？
 @Injectable()
 export class dbUserService {
@@ -93,5 +94,20 @@ export class dbUserService {
                 updated: update.updated
             }
         ).where("id= :id", { id: update.id }).execute();
+    }
+    async graphFindAll(): Promise<UserModel[]> {
+        const repository = this.findAll();
+        var userModels: UserModel[] = (await repository).map((current) => {
+            console.log(current.updated);
+            const user: UserModel = {
+                id: current.id,
+                lastname: current.lastname,
+                firstname: current.firstname,
+                age: current.age,
+                lastUpdate: current.updated,
+            };
+            return user;
+        });
+        return userModels;
     }
 }
